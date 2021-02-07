@@ -79,7 +79,11 @@ git_clone "https://github.com/doughphunghus/Doughs-PunishingWeather-Effects-Medi
 #   Loot Cleanup - Destroys trash and birds nests after you loot them.
 #   Pick Me Up - Allows spikes to be picked up
 git_clone "https://github.com/Donovan522/donovan-7d2d-modlets.git"
-rm -rf $MODCOUNT/donovan-7d2d-modlets/donovan-bigbackpack $MODCOUNT/donovan-7d2d-modlets/donovan-a* $MODCOUNT/donovan-7d2d-modlets/donovan-betterb* $MODCOUNT/donovan-7d2d-modlets/donovan-betterp* $MODCOUNT/donovan-7d2d-modlets/donovan-betters* $MODCOUNT/donovan-7d2d-modlets/donovan-betterv* $MODCOUNT/donovan-7d2d-modlets/donovan-c* $MODCOUNT/donovan-7d2d-modlets/donovan-l* $MODCOUNT/donovan-7d2d-modlets/donovan-m* $MODCOUNT/donovan-7d2d-modlets/donovan-n* $MODCOUNT/donovan-7d2d-modlets/donovan-p* $MODCOUNT/donovan-7d2d-modlets/donovan-u*
+rm -rf $MODCOUNT/donovan-7d2d-modlets/donovan-bigbackpack $MODCOUNT/donovan-7d2d-modlets/donovan-a* $MODCOUNT/donovan-7d2d-modlets/donovan-betterb*
+rm -rf $MODCOUNT/donovan-7d2d-modlets/donovan-betterp* $MODCOUNT/donovan-7d2d-modlets/donovan-betters* $MODCOUNT/donovan-7d2d-modlets/donovan-betterv* 
+rm -rf $MODCOUNT/donovan-7d2d-modlets/donovan-crafta* $MODCOUNT/donovan-7d2d-modlets/donovan-craftb* $MODCOUNT/donovan-7d2d-modlets/donovan-craftj* 
+rm -rf $MODCOUNT/donovan-7d2d-modlets/donovan-craftsc* $MODCOUNT/donovan-7d2d-modlets/donovan-le* $MODCOUNT/donovan-7d2d-modlets/donovan-long* 
+rm -rf $MODCOUNT/donovan-7d2d-modlets/donovan-m* $MODCOUNT/donovan-7d2d-modlets/donovan-n* $MODCOUNT/donovan-7d2d-modlets/donovan-u*
 
 # WTK34's Grenade Arrows
 git_clone https://github.com/wtk34Mods/wtk34Mods_grenade_arrow.git

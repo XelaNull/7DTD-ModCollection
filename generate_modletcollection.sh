@@ -24,7 +24,7 @@ rm -rf $MODCOUNT/7dtd-FixedModlets/7DTD-LuckyLooterBeGone
 #   Delmod Stack Sizes (Increases how large certain items can be stacked)
 #   All other modlets removed
 git_clone https://github.com/DelStryker/Delmod.git #Delmod Modlets
-rm -rf $MODCOUNT/Delmod/ModInfo.xml $MODCOUNT/Delmod/Delmod*Combiner $MODCOUNT/Delmod/Delmod_Pack_And_Store $MODCOUNT/Delmod/Delmod_Decorations $MODCOUNT/Delmod/Delmod_Kitchen $MODCOUNT/Delmod/Delmod_Double_Door $MODCOUNT/Delmod/Delmod_Electronics $MODCOUNT/Delmod/Delmod_Tools $MODCOUNT/Delmod/Delmod_Recipes* $MODCOUNT/Delmod/Delmod_Archetypes $MODCOUNT/Delmod/Delmod_Startup*
+rm -rf $MODCOUNT/Delmod/ModInfo.xml $MODCOUNT/Delmod/Delmod*Stack_Sizes $MODCOUNT/Delmod/Delmod*Combiner $MODCOUNT/Delmod/Delmod_Pack_And_Store $MODCOUNT/Delmod/Delmod_Decorations $MODCOUNT/Delmod/Delmod_Kitchen $MODCOUNT/Delmod/Delmod_Double_Door $MODCOUNT/Delmod/Delmod_Electronics $MODCOUNT/Delmod/Delmod_Tools $MODCOUNT/Delmod/Delmod_Recipes* $MODCOUNT/Delmod/Delmod_Archetypes $MODCOUNT/Delmod/Delmod_Startup*
 
 # Shouden Kalferas's Zombie Lootbag Increase
 #   Slightly increases the frequency that lootbags show up, and 
@@ -57,6 +57,13 @@ git_clone https://github.com/XelaNull/7DTD-Combiner.git
 #   Signs - Wrench apart electrical signs that are lit up to obtain placeable versions of those items
 #   Solar Bank - Wrench apart a POI/prefab Solar Bank and obtain a usable solar bank with change of obtaining solar cells
 git_clone https://github.com/XelaNull/7DTD-SalvagedElectronics.git
+
+# Shouden Kalferas's Zombiepedia Skillpoints
+git_clone https://github.com/XelaNull/7DTD-Zombiepedia_Skillpoints.git
+
+# Shouden Kalferas's Skillbook Skillpoints
+git_clone https://github.com/XelaNull/7DTD-Skillbook_Skillpoints
+rm -rf $MODCOUNT/7DTD-Skillbook-Skillpoints/All* $MODCOUNT/7DTD-Skillbook-Skillpoints/Most* 
 
 # Dough Phunghus's Punishing Weather
 #   Go higher up on a mountain and it gets colder

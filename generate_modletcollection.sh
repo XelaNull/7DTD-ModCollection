@@ -63,7 +63,7 @@ git_clone https://github.com/XelaNull/7DTD-Zombiepedia_Skillpoints.git
 
 # Shouden Kalferas's Skillbook Skillpoints
 git_clone https://github.com/XelaNull/7DTD-Skillbook_Skillpoints
-rm -rf $MODCOUNT/7DTD-Skillbook-Skillpoints/All* $MODCOUNT/7DTD-Skillbook-Skillpoints/Most* 
+rm -rf $MODCOUNT/7DTD-Skillbook_Skillpoints/All* $MODCOUNT/7DTD-Skillbook_Skillpoints/Most* 
 
 # Dough Phunghus's Punishing Weather
 #   Go higher up on a mountain and it gets colder

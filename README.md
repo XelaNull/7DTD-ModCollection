@@ -1,6 +1,6 @@
 # CURRENT RELEASE
 
-<https://github.com/XelaNull/7DTD-ModCollection/releases/download/v19.3_1.0/2021-06-02_181413-Modlet_Collection-Shouden.zip>
+<https://github.com/XelaNull/7DTD-ModCollection/blob/master/RELEASES/2021-06-02_193246-Modlet_Collection-Shouden.zip>
 
 ## Description
 

@@ -27,7 +27,7 @@ cp -r servermods/* SanitysEdge/Mods/
 cp -r modletcollection/* SanitysEdge/Mods/
 cp -r SanitysEdge/Mods/*/7DaysToDieServer_Data SanitysEdge/
 cd SanitysEdge
-zip -r $(date +%Y-%d-%m_%H%M%S)-Modlet_Collection-SanitysEdge.zip Mods 7DaysToDieServer_Data
+zip -r $(date +%Y-%d-%m_%H%M%S)-Modlet_Collection-SanitysEdge.zip Mods 7DaysToDieServer_Data 2> /dev/null
 cd .. && rm -rf servermods
 
 # Generate Zipfile to be given to other people
@@ -44,9 +44,15 @@ find Mods -name "ModURL.txt" -exec rm -rf {} \; 2> /dev/null
 find Mods -name "README.md" -exec rm -rf {} \; 2> /dev/null
 find Mods -name "README.txt" -exec rm -rf {} \; 2> /dev/null
 
+# Delete Common GIT Files
 find Mods -name "LICENSE" -exec rm -rf {} \; 2> /dev/null
 find Mods -name "LICENSE.md" -exec rm -rf {} \; 2> /dev/null
 find Mods -name "CONTRIBUTING.md" -exec rm -rf {} \; 2> /dev/null
+
+# Delete Images
+find Mods -name "*.png" -exec rm -rf {} \; 2> /dev/null
+find Mods -name "*.jpg" -exec rm -rf {} \; 2> /dev/null
+find Mods -name "*.gif" -exec rm -rf {} \; 2> /dev/null
 
 # Find and remove all .git directories
 find Mods -type d -name ".git" -exec rm -rf {} \; 2> /dev/null
@@ -59,7 +65,7 @@ find Mods -name ".gitignore" -exec rm -rf {} \; 2> /dev/null
 cp -r modletcollection/*/7DaysToDieServer_Data .
 
 # Create the .zip file of Mods & 7DaysToDieServer_Data
-zip -r $(date +%Y-%d-%m_%H%M%S)-Modlet_Collection-Shouden.zip Mods 7DaysToDieServer_Data
+zip -r $(date +%Y-%d-%m_%H%M%S)-Modlet_Collection-Shouden.zip Mods 7DaysToDieServer_Datan 2> /dev/null
 
 # FINAL EXPORT AND CLEANUP
 mkdir -p ../RELEASES && mv SanitysEdge/*Modlet_Collection*.zip ../RELEASES/ && mv *Modlet_Collection*.zip ../RELEASES/

@@ -24,7 +24,10 @@ rm -rf $MODCOUNT/7dtd-FixedModlets/7DTD-LuckyLooterBeGone
 #   Delmod Stack Sizes (Increases how large certain items can be stacked)
 #   All other modlets removed
 git_clone https://github.com/DelStryker/Delmod.git #Delmod Modlets
-rm -rf $MODCOUNT/Delmod/ModInfo.xml $MODCOUNT/Delmod/Delmod*Stack_Sizes $MODCOUNT/Delmod/Delmod*Combiner $MODCOUNT/Delmod/Delmod_Pack_And_Store $MODCOUNT/Delmod/Delmod_Decorations $MODCOUNT/Delmod/Delmod_Kitchen $MODCOUNT/Delmod/Delmod_Double_Door $MODCOUNT/Delmod/Delmod_Electronics $MODCOUNT/Delmod/Delmod_Tools $MODCOUNT/Delmod/Delmod_Recipes* $MODCOUNT/Delmod/Delmod_Archetypes $MODCOUNT/Delmod/Delmod_Startup*
+rm -rf $MODCOUNT/Delmod/ModInfo.xml $MODCOUNT/Delmod/Delmod*Stack_Sizes $MODCOUNT/Delmod/Delmod*Combiner 
+rm -rf $MODCOUNT/Delmod/Delmod_Pack_And_Store $MODCOUNT/Delmod/Delmod_Decorations $MODCOUNT/Delmod/Delmod_Kitchen 
+rm -rf $MODCOUNT/Delmod/Delmod_Double_Door $MODCOUNT/Delmod/Delmod_Electronics $MODCOUNT/Delmod/Delmod_Tools 
+rm -rf $MODCOUNT/Delmod/Delmod_Recipes* $MODCOUNT/Delmod/Delmod_Archetypes $MODCOUNT/Delmod/Delmod_Startup*
 
 # Shouden Kalferas's Zombie Lootbag Increase
 #   Slightly increases the frequency that lootbags show up, and 
@@ -69,8 +72,41 @@ rm -rf $MODCOUNT/7DTD-Skillbook_Skillpoints/All* $MODCOUNT/7DTD-Skillbook_Skillp
 #   Go higher up on a mountain and it gets colder
 #   Deserts are hotter
 #   Slightly more bad weather that fluctuates the temperature more
-git_clone "https://github.com/doughphunghus/Doughs-PunishingWeather-Core.git"
-git_clone "https://github.com/doughphunghus/Doughs-PunishingWeather-Effects-Medium"
+#git_clone "https://github.com/doughphunghus/Doughs-PunishingWeather-Core.git"
+#git_clone "https://github.com/doughphunghus/Doughs-PunishingWeather-Effects-Medium"
+# Sous Chef of the Apocalypse
+# https://github.com/doughphunghus/7D2D-Doughs-Mods-a19/tree/main/Doughs-Food-SousChefOfTheApocalypse
+#svn_checkout "https://github.com/doughphunghus/7D2D-Doughs-Mods-a19/trunk/Doughs-Food-SousChefOfTheApocalypse"
+# You’ve Got Mail
+# https://github.com/doughphunghus/7D2D-Doughs-Mods-a19/tree/main/Doughs-YouveGotMail
+#svn_checkout "https://github.com/doughphunghus/7D2D-Doughs-Mods-a19/trunk/Doughs-YouveGotMail"
+# Buff Infection
+# https://github.com/doughphunghus/7D2D-Doughs-Mods-a19/tree/main/Doughs-Buff-Infection
+#svn_checkout "https://github.com/doughphunghus/7D2D-Doughs-Mods-a19/trunk/Doughs-Buff-Infection"
+# Increase Animal Spawn
+# https://github.com/doughphunghus/MeanCloud_7DtD/tree/master/MeanCloud__IncreasedAnimals
+svn_checkout "https://github.com/doughphunghus/MeanCloud_7DtD/trunk/MeanCloud__IncreasedAnimals"
+# Buff Ambiance – Darker Nights
+# https://github.com/doughphunghus/7D2D-Doughs-Mods-a19/tree/main/Doughs-Buff-Ambiance-DarkerNights
+#svn_checkout "https://github.com/doughphunghus/7D2D-Doughs-Mods-a19/trunk/Doughs-Buff-Ambiance-DarkerNights"
+# Buff Ambiance – Darker Inside
+# https://github.com/doughphunghus/7D2D-Doughs-Mods-a19/tree/main/Doughs-Buff-Ambiance-DarkerInside
+#svn_checkout "https://github.com/doughphunghus/7D2D-Doughs-Mods-a19/trunk/Doughs-Buff-Ambiance-DarkerInside"
+# Nerf Flashlights and Player Crafted Lanterns
+# https://github.com/doughphunghus/7D2D-Doughs-Mods-a19/tree/main/Doughs-Nerf-FlashlightsAndLanterns
+# Punishing Weather Temp More in Burnt Forest
+# https://github.com/doughphunghus/7D2D-Doughs-Mods-a19/tree/main/Doughs-PunishingWeather-Temp-MoreInBurntForest
+git_clone https://github.com/doughphunghus/7D2D-Doughs-Mods-a19
+rm -rf $MODCOUNT/7D2D-Doughs-Mods-a19/Doughs-Buff-Grenades $MODCOUNT/7D2D-Doughs-Mods-a19/Doughs-Buff-Sounds* $MODCOUNT/7D2D-Doughs-Mods-a19/Doughs-E*
+rm -rf $MODCOUNT/7D2D-Doughs-Mods-a19/Doughs-Nerf-B* $MODCOUNT/7D2D-Doughs-Mods-a19/Doughs-O* 
+rm -rf $MODCOUNT/7D2D-Doughs-Mods-a19/Doughs-Prefabs* $MODCOUNT/7D2D-Doughs-Mods-a19/Doughs-PunishingWeather-Effects-Light*
+rm -rf $MODCOUNT/7D2D-Doughs-Mods-a19/Doughs-PunishingWeather-Rain*  
+rm -rf $MODCOUNT/7D2D-Doughs-Mods-a19/Doughs-PunishingWorld* $MODCOUNT/7D2D-Doughs-Mods-a19/Doughs-R* $MODCOUNT/7D2D-Doughs-Mods-a19/Doughs-S*
+rm -rf $MODCOUNT/7D2D-Doughs-Mods-a19/Doughs-UI-* 
+# Doughphunghus's Various Pipe Bombs
+#git_clone https://github.com/doughphunghus/Doughs-Buff-PipeBombs
+# Add Five Recipe Ingredients (UI)
+# https://github.com/doughphunghus/7D2D-Doughs-Mods-a19/tree/main/Doughs-UIAddFiveRecipeIngredients
 
 # Donovan's Modlets
 #   Better Cement - Adjust the recipe for making cement so it is more realistic
@@ -79,11 +115,18 @@ git_clone "https://github.com/doughphunghus/Doughs-PunishingWeather-Effects-Medi
 #   Loot Cleanup - Destroys trash and birds nests after you loot them.
 #   Pick Me Up - Allows spikes to be picked up
 git_clone "https://github.com/Donovan522/donovan-7d2d-modlets.git"
-rm -rf $MODCOUNT/donovan-7d2d-modlets/donovan-bigbackpack $MODCOUNT/donovan-7d2d-modlets/donovan-a* $MODCOUNT/donovan-7d2d-modlets/donovan-betterb*
-rm -rf $MODCOUNT/donovan-7d2d-modlets/donovan-betterp* $MODCOUNT/donovan-7d2d-modlets/donovan-betters* $MODCOUNT/donovan-7d2d-modlets/donovan-betterv* 
-rm -rf $MODCOUNT/donovan-7d2d-modlets/donovan-crafta* $MODCOUNT/donovan-7d2d-modlets/donovan-craftb* $MODCOUNT/donovan-7d2d-modlets/donovan-craftj* 
+rm -rf $MODCOUNT/donovan-7d2d-modlets/donovan-bigbackpack $MODCOUNT/donovan-7d2d-modlets/donovan-a* 
+rm -rf $MODCOUNT/donovan-7d2d-modlets/donovan-betterband*
+rm -rf $MODCOUNT/donovan-7d2d-modlets/donovan-betterp* $MODCOUNT/donovan-7d2d-modlets/donovan-bettercement* 
+rm -rf $MODCOUNT/donovan-7d2d-modlets/donovan-betters* $MODCOUNT/donovan-7d2d-modlets/donovan-betterv* 
+rm -rf $MODCOUNT/donovan-7d2d-modlets/donovan-crafta* $MODCOUNT/donovan-7d2d-modlets/donovan-craftb* 
+rm -rf $MODCOUNT/donovan-7d2d-modlets/donovan-craftj* 
 rm -rf $MODCOUNT/donovan-7d2d-modlets/donovan-craftsc* $MODCOUNT/donovan-7d2d-modlets/donovan-le* $MODCOUNT/donovan-7d2d-modlets/donovan-long* 
 rm -rf $MODCOUNT/donovan-7d2d-modlets/donovan-m* $MODCOUNT/donovan-7d2d-modlets/donovan-n* $MODCOUNT/donovan-7d2d-modlets/donovan-u*
+# Better Buffs
+# https://github.com/Donovan522/donovan-7d2d-modlets/tree/stable/donovan-betterbuffs
+# Better Bridges
+# https://github.com/Donovan522/donovan-7d2d-modlets/tree/stable/donovan-betterbridges
 
 # WTK34's Grenade Arrows
 git_clone https://github.com/wtk34Mods/wtk34Mods_grenade_arrow.git
@@ -94,19 +137,28 @@ svn_checkout "https://github.com/JaxTeller718/JaxModletsA182B5/trunk/JaxTeller71
 svn_checkout "https://github.com/JaxTeller718/A19ModletsJax/trunk/JaxTeller718_BiggerWanderingHordes"
 # Jax Teller's - Increase Zombie Sight Range (they detect you sooner)
 svn_checkout "https://github.com/JaxTeller718/A19ModletsJax/trunk/JaxTeller718_ZombieSightRange"
+# Increased Wilderness Zombies
+# https://github.com/JaxTeller718/A19ModletsJax/tree/a19b168/JaxTeller718_0IncreasedBiomeZombiesx2
+svn_checkout "https://github.com/JaxTeller718/A19ModletsJax/trunk/JaxTeller718_0IncreasedBiomeZombiesx2"
+# Slower Levelling
+# https://github.com/JaxTeller718/A19ModletsJax/tree/a19b168/JaxTeller718_SlowerProgression
+svn_checkout "https://github.com/JaxTeller718/A19ModletsJax/trunk/JaxTeller718_SlowerProgression"
 
 # Guppycur's Zombie Getter Upper - Randomizes how long knocked down Zombies take to get up
 wget_download "https://gitlab.com/guppycur/guppymods/-/archive/master/guppymods-master.zip?path=Guppycur%27s_Random_ZombieGetterUpper" guppymods-master.zip extract_file
-
-# Doughphunghus's Various Pipe Bombs
-git_clone https://github.com/doughphunghus/Doughs-Buff-PipeBombs
 
 # Adds Ghillie Suit, Frobscottle, DrPrepper, NakedGator, etc
 git_clone "https://github.com/stamplesmods/7d2dmodlets"
 
 # Khelldon's Bigger Buck and Doe
 git_clone https://github.com/doughphunghus/7d2dModlets
-rm -rf $MODCOUNT/7d2dModlets/Khelldon*Aww* $MODCOUNT/7d2dModlets/Khelldon*Baby* $MODCOUNT/7d2dModlets/Khelldon*Bad* $MODCOUNT/7d2dModlets/Khelldon*Chicken* $MODCOUNT/7d2dModlets/Khelldon*Complex* $MODCOUNT/7d2dModlets/Khelldon*Custom* $MODCOUNT/7d2dModlets/Khelldon*Framed* $MODCOUNT/7d2dModlets/Khelldon*Herp* $MODCOUNT/7d2dModlets/Khelldon*Greener* $MODCOUNT/7d2dModlets/Khelldon*Horny* $MODCOUNT/7d2dModlets/Khelldon*Nailed* $MODCOUNT/7d2dModlets/Khelldon*Piggy* $MODCOUNT/7d2dModlets/Khelldon*Grenade* $MODCOUNT/7d2dModlets/Khelldon*Rebar* $MODCOUNT/7d2dModlets/Khelldon*Screamer* $MODCOUNT/7d2dModlets/Khelldon*Starter* $MODCOUNT/7d2dModlets/Khelldon*Gullivers* $MODCOUNT/7d2dModlets/Khelldon*Benched* $MODCOUNT/7d2dModlets/zzz*
+rm -rf $MODCOUNT/7d2dModlets/Khelldon*Aww* $MODCOUNT/7d2dModlets/Khelldon*Baby* $MODCOUNT/7d2dModlets/Khelldon*Bad* 
+rm -rf $MODCOUNT/7d2dModlets/Khelldon*Chicken* $MODCOUNT/7d2dModlets/Khelldon*Complex* $MODCOUNT/7d2dModlets/Khelldon*Custom* 
+rm -rf $MODCOUNT/7d2dModlets/Khelldon*Framed* $MODCOUNT/7d2dModlets/Khelldon*Herp* $MODCOUNT/7d2dModlets/Khelldon*Greener* 
+rm -rf $MODCOUNT/7d2dModlets/Khelldon*Horny* $MODCOUNT/7d2dModlets/Khelldon*Nailed* $MODCOUNT/7d2dModlets/Khelldon*Piggy* 
+rm -rf $MODCOUNT/7d2dModlets/Khelldon*Grenade* $MODCOUNT/7d2dModlets/Khelldon*Rebar* $MODCOUNT/7d2dModlets/Khelldon*Screamer* 
+rm -rf $MODCOUNT/7d2dModlets/Khelldon*Starter* $MODCOUNT/7d2dModlets/Khelldon*Gullivers* $MODCOUNT/7d2dModlets/Khelldon*Benched* 
+rm -rf $MODCOUNT/7d2dModlets/zzz*
 
 #   Rile's Fixes (Adds countless server fixes back to the game)
 gdrive_download 1q1MdS4kRRu94S22KXcDqfiiZbXW4ZTZs RilesFixes.zip extract_file
@@ -117,8 +169,86 @@ gdrive_download 1jHXXJWzyirKZfhw9CS0yTagPKYITCWUz RilesSeatingPlus.zip extract_f
 
 # Khaine's Zombie Stutter (Preloads Zombies into RAM to reduce Stutter)
 wget_download "https://gitlab.com/KhaineGB/khaines-modlets-a19/-/archive/master/khaines-modlets-a19-master.zip?path=KHA19-ZombieStutterStop" Khaines-ZombieStutter.zip extract_file
+# 12 Slot Crafting Queue
+wget_download "https://gitlab.com/KhaineGB/khaines-modlets-a19/-/archive/master/khaines-modlets-a19-master.zip?path=KHA19-12CraftQueue" Khaines-CraftQueue.zip extract_file
+# 3 Slot Forge (Maybe make this part of a Dwarven Forge??)
+wget_download "https://gitlab.com/KhaineGB/khaines-modlets-a19/-/archive/master/khaines-modlets-a19-master.zip?path=KHA19-3SlotForge" Khaines-3SlotForge.zip extract_file
 
 # Vanilla Expanded Storage Options
 git_clone https://github.com/TSBX-7D/VanillaExpanded-Storage/
 
+# Farm Jeep
+# Guard Pets
+# Working Chicken Coop
 #https://github.com/arramus/Pet-Animals-and-Guards-A19-2021Jan01
+
+# More Recipes
+# https://github.com/wolfbain5/7dtd-a19/raw/master/more%20recipes.rar
+wget_download https://github.com/wolfbain5/7dtd-a19/raw/master/more%20recipes.rar MoreRecipes.rar extract_file
+
+# H7SB Seats
+# https://gitlab.com/EihwazDE/7D2D/-/archive/master/7D2D-master.zip?path=H7SB%20Seats
+# H7SB Storage
+# https://gitlab.com/EihwazDE/7D2D/-/archive/master/7D2D-master.zip?path=H7SB%20Storage
+git_clone https://gitlab.com/EihwazDE/7D2D
+rm -rf $MODCOUNT/7D2D/D* $MODCOUNT/7D2D/H7SB*A* $MODCOUNT/7D2D/H7SB*B* $MODCOUNT/7D2D/H7SB*L* $MODCOUNT/7D2D/M* $MODCOUNT/7D2D/P*
+
+# More Frequent Injuries (Probably needs adjusted)
+# https://docs.google.com/uc?export=download&id=1pgirg2xR24OUpQ-0IyP7qS7NFnHuEcmz
+# gdrive_download 1pgirg2xR24OUpQ-0IyP7qS7NFnHuEcmz MoreFrequenctInjuries.zip extract_file
+
+# Deep Dark
+# https://docs.google.com/uc?export=download&id=1_uZRxQG5AWzq_4gZ1zcL5Rx16PLPma7v
+gdrive_download 1_uZRxQG5AWzq_4gZ1zcL5Rx16PLPma7v DeepDark.rar extract_file
+
+# Baby Animals
+# https://docs.google.com/uc?export=download&id=1INMD2rNGsLvfsTxrk-WztWhTqXRvBokV
+gdrive_download 1INMD2rNGsLvfsTxrk-WztWhTqXRvBokV BabyAnimals.zip extract_file
+
+# Re-Box Ammo (Probably needs to be recreated as my own)
+# https://drive.google.com/file/d/1DJ8Wx4urrOS65pVicYRt84FqDRQVkKIw/view?usp=sharing
+# gdrive_download 1DJ8Wx4urrOS65pVicYRt84FqDRQVkKIw ReBoxAmmo.7z extract_file
+
+# Craft Windows
+# https://docs.google.com/uc?export=download&id=1aatbt3ePnd7C6nBadLdwnQQ9wlxnl0Fk
+gdrive_download 1aatbt3ePnd7C6nBadLdwnQQ9wlxnl0Fk CraftWindows.zip
+
+# Death by Campfire
+# https://gitlab.com/magejoshplays/7-days-to-die-a19-mods/-/archive/master/7-days-to-die-a19-mods-master.zip?path=Death%20by%20Campfire
+git_clone https://gitlab.com/magejoshplays/7-days-to-die-a19-mods
+
+# Riles Deco Blocks
+# https://drive.google.com/file/d/1473BzsoAItbO7hwumOwuJuegZVXKlZU8/view?usp=sharing
+gdrive_download 1473BzsoAItbO7hwumOwuJuegZVXKlZU8 RilesDecoBlocks.zip extract_file
+
+# Armor and Cloth Sold With Mods
+# https://github.com/Okamich/FallOFBabylon-A19/tree/main/FoB_ArmorWithMods
+# Guns and Tools Sold With Mods
+# https://github.com/Okamich/FallOFBabylon-A19/tree/main/Fob_Traders
+git_clone https://github.com/Okamich/FallOFBabylon-A19
+rm -rf $MODCOUNT/FallOFBabylon-A19/FoB-B* $MODCOUNT/FallOFBabylon-A19/FoB_W* $MODCOUNT/FallOFBabylon-A19/FoB_H* 
+rm -rf $MODCOUNT/FallOFBabylon-A19/FoB-W* $MODCOUNT/FallOFBabylon-A19/FoB-B* $MODCOUNT/FallOFBabylon-A19/FoB_L*
+
+# wtk34 Water Filter v1.2
+# https://github.com/wtk34Mods/wtk34_water_filter/archive/master.zip
+git_clone https://github.com/wtk34Mods/wtk34_water_filter
+
+# Better Goggles
+# https://docs.google.com/uc?export=download&id=1uoFjiZpMh8plr-1s1Bmt8cOBPO05YChG
+gdrive_download 1uoFjiZpMh8plr-1s1Bmt8cOBPO05YChG BetterGoggles.rar extract_file
+
+# Brighter Vehicle Headlights
+# https://gitlab.com/Ragsy2145/other-7-days-to-die-mods-and-modlets/-/archive/master/other-7-days-to-die-mods-and-modlets-master.zip?path=Ragsy_Brighter_Headlights_V2
+wget_download "https://gitlab.com/Ragsy2145/other-7-days-to-die-mods-and-modlets/-/archive/master/other-7-days-to-die-mods-and-modlets-master.zip?path=Ragsy_Brighter_Headlights_V2" BrighterHeadlights.zip extract_file
+
+
+
+
+
+
+
+
+
+
+
+

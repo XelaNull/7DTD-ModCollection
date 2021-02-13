@@ -12,6 +12,7 @@ function gdrive_download () {
   echo "https://docs.google.com/uc?export=download&id=$1" > $MODCOUNT/ModURL.txt
   cd $MODCOUNT
   [[ "$3" == "extract_file" ]] && extract_file $2
+  echo "https://docs.google.com/uc?export=download&id=$1" > ModURL.txt
   cd ..
 }
 

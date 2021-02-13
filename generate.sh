@@ -36,13 +36,18 @@ sed 's:[^/]*$::' ModInfo.txt > Mods.txt
 # Loop through all the Mods found and move them to a Mods folder
 mkdir Mods
 while read moddir; do
+  if [[ -f "$moddir/../ModURL.txt" ]]; then cp "$moddir/../ModURL.txt" "$moddir/ModURL.txt"; fi
+  if [[ -f "$moddir/../../ModURL.txt" ]]; then cp "$moddir/../../ModURL.txt" "$moddir/ModURL.txt"; fi
+  if [[ -f "$moddir/../../../ModURL.txt" ]]; then cp "$moddir/../../../ModURL.txt" "$moddir/ModURL.txt"; fi
   mv "$moddir" Mods/
 done < Mods.txt
 # Find and delete all ModURL.txt files
-find Mods -name "ModURL.txt" -exec rm -rf {} \; 2> /dev/null
+#find Mods -name "ModURL.txt" -exec rm -rf {} \; 2> /dev/null
 # Find and delete all README.md && LICENSE
 find Mods -name "README.md" -exec rm -rf {} \; 2> /dev/null
 find Mods -name "README.txt" -exec rm -rf {} \; 2> /dev/null
+find Mods -name "readme.txt" -exec rm -rf {} \; 2> /dev/null
+find Mods -name "readme.md" -exec rm -rf {} \; 2> /dev/null
 
 # Delete Common GIT Files
 find Mods -name "LICENSE" -exec rm -rf {} \; 2> /dev/null
@@ -65,8 +70,17 @@ find Mods -name ".gitignore" -exec rm -rf {} \; 2> /dev/null
 cp -r modletcollection/*/7DaysToDieServer_Data .
 
 # Create the .zip file of Mods & 7DaysToDieServer_Data
-zip -r $(date +%Y-%d-%m_%H%M%S)-Modlet_Collection-Shouden.zip Mods 7DaysToDieServer_Datan 2> /dev/null
+zip -r $(date +%Y-%d-%m_%H%M%S)-Modlet_Collection-Shouden.zip Mods 7DaysToDieServer_Data 2> /dev/null
+
+########### CREATE COMBINED MODLET ################
+# Folder that contains modlets: Mods/
+../generate_combined_modlet.sh
+######### END CREATE COMBINED MODLET ##############
 
 # FINAL EXPORT AND CLEANUP
-mkdir -p ../RELEASES && mv SanitysEdge/*Modlet_Collection*.zip ../RELEASES/ && mv *Modlet_Collection*.zip ../RELEASES/
-cd .. && rm -rf $MODSSUBDIR
+mkdir -p ../RELEASES && \
+mv SanitysEdge/*Modlet_Collection*.zip . && \
+mv modletcollection build_modletcollection && \
+mv SanitysEdge build_SanityEdgeModlets
+rm -rf ModInfo.txt ModsUnsorted.txt
+mv Mods.txt ModletList.txt

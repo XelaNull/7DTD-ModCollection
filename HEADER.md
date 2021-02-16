@@ -1,3 +1,7 @@
+# FORUM THREAD
+
+<https://community.7daystodie.com/topic/23593-neopolitan-collection-modlet-a193/>
+
 # CURRENT RELEASE
 
 **Neopolitan** - Vanilla, with Chocolate and Strawberry : All modlets collected and combined into a single all-in-one collection modlet for easy installation:

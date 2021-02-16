@@ -8,7 +8,7 @@ export MODS_DIR=`pwd`
 export MODSSUBDIR=`echo "MODLET_COLLECTION-$(date +%Y-%d-%m_%H%M%S)"`
 echo "Creating $MODS_DIR/$MODSSUBDIR.."
 mkdir -p $MODS_DIR/$MODSSUBDIR/servermods
-mkdir -p $MODS_DIR/$MODSSUBDIR/modletcollection
+mkdir -p $MODS_DIR/$MODSSUBDIR/build_modletcollection
 
 # Download and Generate Server Manager Pack
 echo "Changing Directory to: $MODS_DIR/$MODSSUBDIR/servermods"
@@ -16,23 +16,23 @@ cd $MODS_DIR/$MODSSUBDIR/servermods
 ../../generate_servermods.sh
 
 # Download and Generate Modlet Collection Pack
-echo "Changing Directory to: $MODS_DIR/$MODSSUBDIR/modletcollection"
-cd ../modletcollection
+echo "Changing Directory to: $MODS_DIR/$MODSSUBDIR/build_modletcollection"
+cd ../build_modletcollection
 ../../generate_modletcollection.sh
 cd ..
 
 # Generate Zipfile for Sanity's Edge
-mkdir -p SanitysEdge/Mods
-cp -r servermods/* SanitysEdge/Mods/
-cp -r modletcollection/* SanitysEdge/Mods/
-cp -r SanitysEdge/Mods/*/7DaysToDieServer_Data SanitysEdge/
-cd SanitysEdge
+mkdir -p build_SanityEdgeModlets/Mods
+cp -r servermods/* build_SanityEdgeModlets/Mods/
+cp -r build_modletcollection/* build_SanityEdgeModlets/Mods/
+cp -r build_SanityEdgeModlets/Mods/*/7DaysToDieServer_Data build_SanityEdgeModlets/
+cd build_SanityEdgeModlets
 zip -r $(date +%Y-%d-%m_%H%M%S)-Modlet_Collection-SanitysEdge.zip Mods 7DaysToDieServer_Data 2> /dev/null
 cd .. && rm -rf servermods
 
 # Generate Zipfile to be given to other people
-find modletcollection -name 'ModInfo.xml' -exec echo {} \; > ModInfo.txt
-sed 's:[^/]*$::' ModInfo.txt > Mods.txt
+find build_modletcollection -name 'ModInfo.xml' -exec echo {} \; > ModInfo.txt
+sed 's:[^/]*$::' ModInfo.txt > ModletList.txt; rm -rf ModInfo.txt
 # Loop through all the Mods found and move them to a Mods folder
 mkdir Mods
 while read moddir; do
@@ -40,7 +40,7 @@ while read moddir; do
   if [[ -f "$moddir/../../ModURL.txt" ]]; then cp "$moddir/../../ModURL.txt" "$moddir/ModURL.txt"; fi
   if [[ -f "$moddir/../../../ModURL.txt" ]]; then cp "$moddir/../../../ModURL.txt" "$moddir/ModURL.txt"; fi
   mv "$moddir" Mods/
-done < Mods.txt
+done < ModletList.txt
 # Find and delete all ModURL.txt files
 #find Mods -name "ModURL.txt" -exec rm -rf {} \; 2> /dev/null
 # Find and delete all README.md && LICENSE
@@ -67,7 +67,7 @@ find Mods -name ".gitattributes" -exec rm -rf {} \; 2> /dev/null
 find Mods -name ".gitignore" -exec rm -rf {} \; 2> /dev/null
 
 # Copy any 7DaysToDieServerData_Data folders
-cp -r modletcollection/*/7DaysToDieServer_Data .
+cp -r build_modletcollection/*/7DaysToDieServer_Data .
 
 # Create the .zip file of Mods & 7DaysToDieServer_Data
 zip -r $(date +%Y-%d-%m_%H%M%S)-Modlet_Collection-Shouden.zip Mods 7DaysToDieServer_Data 2> /dev/null
@@ -78,9 +78,5 @@ zip -r $(date +%Y-%d-%m_%H%M%S)-Modlet_Collection-Shouden.zip Mods 7DaysToDieSer
 ######### END CREATE COMBINED MODLET ##############
 
 # FINAL EXPORT AND CLEANUP
-mkdir -p ../RELEASES && \
-mv SanitysEdge/*Modlet_Collection*.zip . && \
-mv modletcollection build_modletcollection && \
-mv SanitysEdge build_SanityEdgeModlets
-rm -rf ModInfo.txt ModsUnsorted.txt
-mv Mods.txt ModletList.txt
+mv build_SanityEdgeModlets/*Modlet_Collection*.zip . && \
+mv Mods extracted_Mods

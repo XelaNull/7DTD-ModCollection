@@ -34,7 +34,7 @@ function svn_checkout () {
   mkdir $MODCOUNT && cd $MODCOUNT
   echo "SVN Checkout of $1"
   svn checkout "$1" > /dev/null 2>&1
-  echo "$1" > ModURL.txt
+  echo "$1" | sed 's|/trunk.*|/|' > ModURL.txt
   cd ..
 }
 function dropbox_download () {

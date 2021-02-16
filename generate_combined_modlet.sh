@@ -4,7 +4,7 @@ echo "###################################"
 echo "GENERATING COMBINED MODLET"
 
 # Create the CombinedModlet folder
-rm -rf CombinedModlet 7DTD-Neopolitan; mkdir -p CombinedModlet/Config/XUi
+rm -rf CombinedModlet extracted_7DTD-Neopolitan; mkdir -p CombinedModlet/Config/XUi
 echo '<?xml version="1.0" encoding="UTF-8" ?>
 <xml>
 	<ModInfo>
@@ -17,8 +17,8 @@ echo '<?xml version="1.0" encoding="UTF-8" ?>
 </xml>' > CombinedModlet/ModInfo.xml
 
 find Mods -name 'ModInfo.xml' -exec echo {} \; > ModInfo.txt
-sed 's:[^/]*$::' ModInfo.txt > ModsUnsorted.txt
-cat ModsUnsorted.txt | sort > Mods.txt
+sed 's:[^/]*$::' ModInfo.txt > ModsUnsorted.txt; rm -rf ModInfo.txt
+cat ModsUnsorted.txt | sort > ModletList.txt; rm -rf ModsUnsorted.txt
 while read moddir; do
   ## If localization.txt exists, we should copy it to the combined file
   #echo $moddir;
@@ -61,21 +61,11 @@ while read moddir; do
     cat "$xmlfile" | sed -e :a -re 's/<!--.*?-->//g;/<!--/N;//ba' > NOCOMMENTS_XMLFILE
     cat NOCOMMENTS_XMLFILE | awk 'NF' > NOBLANK_XMLFILE; rm -rf NOCOMMENTS_XMLFILE
     
-    # Determine the opening and closing tag text
-    #ENCLOSINGTAG=`head -1 NOBLANK_XMLFILE | sed 's|<||g' | sed 's|>||g' | tr -d "\r" | tr -d "\n"`
-    # Remove opening and closing tags
-    #sed -i "s|<$ENCLOSINGTAG>||gI" NOBLANK_XMLFILE
-    #sed -i "s|</$ENCLOSINGTAG>||gI" NOBLANK_XMLFILE
-    #sed -i "/^ *$/d" NOBLANK_XMLFILE
-    #sed -i '/^$/d' NOBLANK_XMLFILE
-    #sed -i '/^[[:space:]]*$/d' NOBLANK_XMLFILE
-    #sed -e '2,$!d' -e '$d' NOBLANK_XMLFILE > XMLFILE
     cat NOBLANK_XMLFILE | grep '\S' > XMLFILE
     sed -i '1d' XMLFILE
     sed -i '$ d' XMLFILE
-    #mv NOBLANK_XMLFILE XMLFILE
     
-    echo "$moddir/Config/$BASENAME (tag: $ENCLOSINGTAG)"
+    echo "$moddir/Config/$BASENAME"
 
     if [[ ! -f CombinedModlet/$BASENAME ]]; then
       echo "<configs>" >> CombinedModlet/$BASENAME
@@ -83,7 +73,7 @@ while read moddir; do
     echo "<!-- #################################### -->" >> CombinedModlet/$BASENAME
     echo "<!-- START $NAME by $AUTHOR -->" >> CombinedModlet/$BASENAME
     if [[ ! -z $WEBSITE ]]; then echo "<!-- Website: $WEBSITE -->" >> CombinedModlet/$BASENAME; fi
-		echo "<!-- Website: $DLURL -->" >> CombinedModlet/$BASENAME
+		echo "<!-- Download URL: $DLURL -->" >> CombinedModlet/$BASENAME
     # INSERT JUST TO XMLFILE WITHOUT OPENING AND CLOSING XML TAGS
     cat XMLFILE | awk 'NF' > NOBLANK_XMLFILE ;
     sed -i "/^ *$/d" NOBLANK_XMLFILE
@@ -92,7 +82,7 @@ while read moddir; do
     echo "" >> CombinedModlet/$BASENAME
     echo "" >> CombinedModlet/$BASENAME
   done < MODXMLs.txt; rm -rf MODXMLs.txt
-done < Mods.txt; 
+done < ModletList.txt; 
 
 # Create README.md
 cp ../HEADER.md CombinedModlet/README.md
@@ -105,7 +95,6 @@ while read xmlfile; do
   echo "</configs>" >> $xmlfile
 done < MODXMLs.txt; rm -rf MODXMLs.txt
 
-
-
 mv CombinedModlet 7DTD-Neopolitan
 zip -r $(date +%Y-%d-%m_%H%M%S)-7DTD-Neopolitan.zip 7DTD-Neopolitan
+mv 7DTD-Neopolitan extracted_7DTD-Neopolitan

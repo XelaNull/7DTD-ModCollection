@@ -1,20 +1,21 @@
 #!/bin/bash
+. ../../download_mods.func.sh
 
 echo "###################################"
 echo "GENERATING COMBINED MODLET"
 
 # Create the CombinedModlet folder
 rm -rf CombinedModlet extracted_7DTD-Neopolitan; mkdir -p CombinedModlet/Config/XUi
-echo '<?xml version="1.0" encoding="UTF-8" ?>
+echo "<?xml version=\"1.0\" encoding=\"UTF-8\" ?>
 <xml>
 	<ModInfo>
-		<Name value="Neopolitan" />
-		<Description value="7DTD Vanilla with some chocolate and strawberry modlets mixed in." />
-		<Author value="Combined by Shouden Kalferas, but Authored by Many (see README)" />
-		<Version value="A19.3_1.0" />	
-		<Website value="None" />		
+		<Name value=\"Neopolitan\" />
+		<Description value=\"7DTD Vanilla with some chocolate and strawberry modlets mixed in.\" />
+		<Author value=\"Combined by Shouden Kalferas, but Authored by Many (see README)\" />
+		<Version value=\"A19.3_1.0d\" />	
+		<Website value=\"None\" />		
 	</ModInfo>
-</xml>' > CombinedModlet/ModInfo.xml
+</xml>" > CombinedModlet/ModInfo.xml
 
 find Mods -name 'ModInfo.xml' -exec echo {} \; > ModInfo.txt
 sed 's:[^/]*$::' ModInfo.txt > ModsUnsorted.txt; rm -rf ModInfo.txt
@@ -43,16 +44,16 @@ while read moddir; do
       echo "Key,File,Type,UsedInMainMenu,NoTranslate,english,Context / Alternate Text,german,latam,french,italian,japanese,koreana,polish,brazilian,russian,turkish,schinese,tchinese,spanish" > CombinedModlet/Config/Localization.txt
     fi
     echo "" >> CombinedModlet/Config/Localization.txt
-    cat "$moddir/Config/Localization.txt" >> CombinedModlet/Config/Localization.txt
+    ../parse-localization.php "$moddir/Config/Localization.txt" >> CombinedModlet/Config/Localization.txt
   fi
   # Handle Files named "localization.txt"
-  if [[ -f $moddir/Config/localization.txt ]]; then
-    if [[ ! -f CombinedModlet/Config/Localization.txt ]]; then
-      echo "Key,File,Type,UsedInMainMenu,NoTranslate,english,Context / Alternate Text,german,latam,french,italian,japanese,koreana,polish,brazilian,russian,turkish,schinese,tchinese,spanish" > CombinedModlet/Config/Localization.txt
-    fi
-    echo "" >> CombinedModlet/Config/Localization.txt
-    cat "$moddir/Config/localization.txt" >> CombinedModlet/Config/Localization.txt
-  fi
+  #if [[ -f $moddir/Config/localization.txt ]]; then
+  #  if [[ ! -f CombinedModlet/Config/localization.txt ]]; then
+  #    echo "Key,File,Type,UsedInMainMenu,NoTranslate,english,Context / Alternate Text,german,latam,french,italian,japanese,koreana,polish,brazilian,russian,turkish,schinese,tchinese,spanish" > CombinedModlet/Config/Localization.txt
+  #  fi
+  #  echo "" >> CombinedModlet/Config/Localization.txt
+  #  cat "$moddir/Config/localization.txt" >> CombinedModlet/Config/Localization.txt
+  #fi
   
   ## Find all XML files under the Mod Folder
   find "$moddir/Config" -name *.xml ! -name ModInfo.xml > MODXMLs.txt

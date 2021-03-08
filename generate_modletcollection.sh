@@ -10,10 +10,8 @@ mv $MODCOUNT/7DTD-WhiteRiver_ToC/WhiteRiverToC__REQUIRED $MODCOUNT/7DTD-WhiteRiv
 #     Slightly increases the frequency that lootbags show up, and causes the lootbags to stick around for ~15 minutes
 git_clone https://github.com/XelaNull/7DTD-ZombieLootbag_Increase.git
 #   60slot Bag, Faster Bellows, and Increase Headshot Damage
-#     60slot Bag - Provides a 60-slot bag with 30-reserved to "earn"
+#     60slot Bag - Provides a 60-slot bag with 30-reserved to "earn" (Made from Khaine's 60BBM)
 svn_checkout "https://github.com/XelaNull/7DTD-Bag_Bellows_Headshot/trunk/60Slot_Bag_30Reserve"
-#     Faster Bellows - Smelt items faster in your forge
-# svn_checkout "https://github.com/XelaNull/7DTD-Bag_Bellows_Headshot/trunk/Faster_Bellows"
 #     Increased Headshot Damage - Slightly increases the damage when making headshots
 svn_checkout "https://github.com/XelaNull/7DTD-Bag_Bellows_Headshot/trunk/Headshot_15"
 #   Magazine_Plants_Trader
@@ -33,33 +31,29 @@ git_clone https://github.com/XelaNull/7DTD-SalvagedElectronics.git
 git_clone https://github.com/XelaNull/7DTD-Zombiepedia_Skillpoints.git
 #   Some Skillbook Skillpoints
 svn_checkout "https://github.com/XelaNull/7DTD-Skillbook_Skillpoints/trunk/Some_Skillbooks_Skillpoints"
+#   Shouden's Craft Acid (Allows crafting of Bottles of Acid)
+svn_checkout "https://github.com/XelaNull/7DTD-ShoudensModlets/trunk/7DTD-Acid"
+#   Meat Rendering (Allows crafting of Animal Fat from Diseased Meat)
+svn_checkout "https://github.com/XelaNull/7DTD-ShoudensModlets/trunk/7DTD-MeatRendering"
+#   Quenchiest Cactus Juice (Obtain murky water from Cactuses)
+svn_checkout "https://github.com/XelaNull/7DTD-ShoudensModlets/trunk/7DTD-Quenchiest_Cactus_Juice"
+#   Sewing Kit (Allows crafting of sewing kits)
+svn_checkout "https://github.com/XelaNull/7DTD-ShoudensModlets/trunk/7DTD-SewingKit"
+#   Steel Trussing Sheet (Adds back the steel trussing sheet with 7000 durability)
+svn_checkout "https://github.com/XelaNull/7DTD-ShoudensModlets/trunk/7DTD-SteelTrussingSheet"
+#   Darker Nights & Brighter Lights
+git_clone https://github.com/XelaNull/7DTD-DarkerNights_BrighterLights.git
+#   Khaine's - 12 Slot Crafting Queue (Modified by Shouden Kalferas for 8 Slots)
+svn_checkout "https://github.com/XelaNull/7DTD-ShoudensModlets/trunk/7DTD-8CraftQueue"
 
 # Shouden Kalferas's Fixed Modlets Pack
-#   Shouden's Craft Acid (Allows crafting of Bottles of Acid)
-svn_checkout "https://github.com/XelaNull/7dtd-FixedModlets/trunk/7DTD-Acid"
-#   Faster Crafting (Speeds up some crafting times)
-# svn_checkout "https://github.com/XelaNull/7dtd-FixedModlets/trunk/7DTD-FasterCrafting"
-#   Meat Rendering (Allows crafting of Animal Fat from Diseased Meat)
-svn_checkout "https://github.com/XelaNull/7dtd-FixedModlets/trunk/7DTD-MeatRendering"
-#   Quenchiest Cactus Juice (Obtain murky water from Cactuses)
-svn_checkout "https://github.com/XelaNull/7dtd-FixedModlets/trunk/7DTD-Quenchiest_Cactus_Juice"
-rm -rf $MODCOUNT/7dtd-FixedModlets/7DTD-Quenchiest_Cactus_Juice/*.zip $MODCOUNT/7DTD-Quenchiest_Cactus_Juice/*.zip
-#   Sewing Kit (Allows crafting of sewing kits)
-svn_checkout "https://github.com/XelaNull/7dtd-FixedModlets/trunk/7DTD-SewingKit"
-#   Steel Trussing Sheet (Adds back the steel trussing sheet with 7000 durability)
-svn_checkout "https://github.com/XelaNull/7dtd-FixedModlets/trunk/7DTD-SteelTrussingSheet"
-#   Khaine's - 12 Slot Crafting Queue (Modified by Shouden Kalferas for 8 Slots)
-svn_checkout "https://github.com/XelaNull/7dtd-FixedModlets/trunk/8CraftQueue"
 #   Better Goggles (Slightly Lowered Lucky Looter Value)
 svn_checkout "https://github.com/XelaNull/7dtd-FixedModlets/trunk/BetterGoggles"
 #   Delmod Stack Sizes
 svn_checkout "https://github.com/XelaNull/7dtd-FixedModlets/trunk/Delmod_Stack_Sizes"
-#   Doughphunghus's Buff Ambiance – Darker Nights
-svn_checkout "https://github.com/XelaNull/7dtd-FixedModlets/trunk/Doughs-Buff-Ambiance-DarkerInside"
-#   Doughphunghus's Buff Ambiance – Darker Inside (Brightened up inside slightly)
-svn_checkout "https://github.com/XelaNull/7dtd-FixedModlets/trunk/Doughs-Buff-Ambiance-DarkerNights"
 #   Home Depot (Adds countless decorative items and wireless electricity blocks)
-svn_checkout "https://github.com/XelaNull/7dtd-FixedModlets/trunk/Home_Depot"
+#svn_checkout "https://github.com/XelaNull/7dtd-FixedModlets/trunk/Home_Depot"
+git_clone https://github.com/XelaNull/HOME_DEPOT_7D2D_MOD.git
 #   IceBurg's Baby Animals (Made small animals less deadly)
 svn_checkout "https://github.com/XelaNull/7dtd-FixedModlets/trunk/IceBurg_Baby_Animals_1_6"
 #   IceBurg's Craft Windows
@@ -68,8 +62,6 @@ svn_checkout "https://github.com/XelaNull/7dtd-FixedModlets/trunk/IceBurg_Craft_
 svn_checkout "https://github.com/XelaNull/7dtd-FixedModlets/trunk/KHA19-HPBars"
 #   MeanCloud's Increase Animal Spawn (Slightly Lowered Values, by Shouden Kalferas)
 svn_checkout "https://github.com/XelaNull/7dtd-FixedModlets/trunk/MeanCloud_IncreasedAnimals"
-#   Ragsy's Brighter Vehicle Headlights (Modified by Shouden Kalferas)
-svn_checkout "https://github.com/XelaNull/7dtd-FixedModlets/trunk/Ragsy_Brighter_Headlights_V2"
 #   Claymore's Stainless Steel Returns (Adds back stainless steel blocks & polish)
 svn_checkout "https://github.com/XelaNull/7dtd-FixedModlets/trunk/Stainless_Steel_Returns"
 #   Super Corn Cooked Foods (Adds foods crafted from super corn)
@@ -78,19 +70,27 @@ svn_checkout "https://github.com/XelaNull/7dtd-FixedModlets/trunk/SuperCornCooke
 svn_checkout "https://github.com/XelaNull/7dtd-FixedModlets/trunk/Terrain_Based_Movement_Speed"
 #   TSBX's Vanilla Expanded Storage Options (Removed UIAtlas Reference & bad windows XML code)
 svn_checkout "https://github.com/XelaNull/7dtd-FixedModlets/trunk/Vanilla_Expanded_Storage"
-#   Xal's Zombies Attach Animals (Zombies attack animals)
+#   Xal's Zombies Attack Animals (Zombies attack animals)
 svn_checkout "https://github.com/XelaNull/7dtd-FixedModlets/trunk/Xal_SetZombiesAttackAnimals"
 #   WTK34's Grenade Arrows, Modified by Shouden Kalferas for Compatibility with White River Tools of Citizenship
 svn_checkout "https://github.com/XelaNull/7dtd-FixedModlets/trunk/zWTK34-Grenade_Arrows"
+#   DelStryker's Combiner - Allows you to use a workbench to combine two same items for better quality item
+svn_checkout "https://github.com/XelaNull/7dtd-FixedModlets/trunk/Delmod_Combiner"
+# Magejoshplay's Death by Campfire
+svn_checkout "https://github.com/XelaNull/7dtd-FixedModlets/trunk/Death_by_Campfire"
+# Survager's mod_rework_repair_weapons (Require parts to repair weapons)
+svn_checkout "https://github.com/XelaNull/7dtd-FixedModlets/trunk/mod_rework_repair_weapons"
+# H7SB Storage
+svn_checkout "https://github.com/XelaNull/7dtd-FixedModlets/trunk/H7SB_Storage"
+# H7SB Seats
+svn_checkout "https://github.com/XelaNull/7dtd-FixedModlets/trunk/H7SB_Seats"
+# Dr. Prepper (Run Far and Fast)
+svn_checkout "https://github.com/XelaNull/7dtd-FixedModlets/trunk/DrPrepper"
+
 
 # Delmod's Modlets
 #   Return of the Jail Door - does not require electricity
 svn_checkout "https://github.com/DelStryker/Delmod/trunk/Delmod_Jail_Door"
-#   Delmod Stack Sizes (Increases how large certain items can be stacked)
-#svn_checkout "https://github.com/DelStryker/Delmod/trunk/Delmod_Stack_Sizes"
-#   Combiner - Allows you to use a workbench to combine two same items for better quality item
-svn_checkout "https://github.com/DelStryker/Delmod/trunk/Delmod_Combiner"
-#git_clone https://github.com/XelaNull/7DTD-Combiner.git
 
 
 # Doughphunghus's Modlets
@@ -98,6 +98,8 @@ svn_checkout "https://github.com/DelStryker/Delmod/trunk/Delmod_Combiner"
 svn_checkout "https://github.com/doughphunghus/7D2D-Doughs-Mods-a19/trunk/Doughs-Buff-Infection"
 #   Add More Pipe Bomb Variety
 svn_checkout "https://github.com/doughphunghus/7D2D-Doughs-Mods-a19/trunk/Doughs-Buff-PipeBombs"
+#   Add more Grenade Variety 2020-02
+svn_checkout "https://github.com/doughphunghus/7D2D-Doughs-Mods-a19/trunk/Doughs-Buff-Grenades"
 #   Sous Chef of the Apocalypse
 svn_checkout "https://github.com/doughphunghus/7D2D-Doughs-Mods-a19/trunk/Doughs-Food-SousChefOfTheApocalypse"
 #   Nerf Flashlights and Player Crafted Lanterns - Harder to craft and find
@@ -137,7 +139,7 @@ svn_checkout "https://github.com/JaxTeller718/A19ModletsJax/trunk/JaxTeller718_B
 #   Increase Zombie Sight Range (they detect you sooner)
 svn_checkout "https://github.com/JaxTeller718/A19ModletsJax/trunk/JaxTeller718_ZombieSightRange"
 #   Increased Wilderness Zombies
-svn_checkout "https://github.com/JaxTeller718/A19ModletsJax/trunk/JaxTeller718_0IncreasedBiomeZombiesx2"
+svn_checkout "https://github.com/JaxTeller718/A19ModletsJax/trunk/JaxTeller718_IncreasedBiomeZombiesx2"
 #   Slower Levelling
 svn_checkout "https://github.com/JaxTeller718/A19ModletsJax/trunk/JaxTeller718_SlowerProgression"
 
@@ -151,14 +153,10 @@ wget_download "https://gitlab.com/guppycur/guppymods/-/archive/master/guppymods-
 svn_checkout "https://github.com/stamplesmods/7d2dmodlets/trunk/GhillieSuitAsMods"
 #   Frobscottle Drink (Jump Really High)
 svn_checkout "https://github.com/stamplesmods/7d2dmodlets/trunk/Frobscottle"
-#   Dr. Prepper (Run Far and Fast)
-svn_checkout "https://github.com/stamplesmods/7d2dmodlets/trunk/DrPrepper"
 #   Emperor Dye - Turns armor invisible
 svn_checkout "https://github.com/stamplesmods/7d2dmodlets/trunk/EmperorDye"
 #   Naked Gator
 svn_checkout "https://github.com/stamplesmods/7d2dmodlets/trunk/NakedGator"
-#   Mutations if you reach highest level of an attribute
-# svn_checkout "https://github.com/stamplesmods/7d2dmodlets/trunk/Mutations"
 #   Stamples Defense Trader Quests
 svn_checkout "https://github.com/stamplesmods/7d2dmodlets/trunk/StamplesDefenseQuests"
 #   Snow Biome has more than Lumberjacks
@@ -186,24 +184,6 @@ gdrive_download 1473BzsoAItbO7hwumOwuJuegZVXKlZU8 RilesDecoBlocks.zip extract_fi
 wget_download "https://gitlab.com/KhaineGB/khaines-modlets-a19/-/archive/master/khaines-modlets-a19-master.zip?path=KHA19-ZombieStutterStop" Khaines-ZombieStutter.zip extract_file
 
 
-# Wolfbain5's More Recipes
-# https://github.com/wolfbain5/7dtd-a19/raw/master/more%20recipes.rar
-wget_download https://github.com/wolfbain5/7dtd-a19/raw/master/more%20recipes.rar MoreRecipes.rar extract_file
-
-
-# H7SB Seats
-# https://gitlab.com/EihwazDE/7D2D/-/archive/master/7D2D-master.zip?path=H7SB%20Seats
-# H7SB Storage
-# https://gitlab.com/EihwazDE/7D2D/-/archive/master/7D2D-master.zip?path=H7SB%20Storage
-git_clone https://gitlab.com/EihwazDE/7D2D
-rm -rf $MODCOUNT/7D2D/H7SB*Sleeping $MODCOUNT/7D2D/D* $MODCOUNT/7D2D/H7SB*A* $MODCOUNT/7D2D/H7SB*B* $MODCOUNT/7D2D/H7SB*L* $MODCOUNT/7D2D/M* $MODCOUNT/7D2D/P*
-
-
-# Magejoshplay's Death by Campfire
-# https://gitlab.com/magejoshplays/7-days-to-die-a19-mods/-/archive/master/7-days-to-die-a19-mods-master.zip?path=Death%20by%20Campfire
-git_clone https://gitlab.com/magejoshplays/7-days-to-die-a19-mods
-
-
 # Okamich's Modlets
 #   Guns and Tools Sold With Mods
 svn_checkout "https://github.com/Okamich/FallOFBabylon-A19/trunk/Fob_Traders"
@@ -215,12 +195,16 @@ svn_checkout "https://github.com/Okamich/FallOFBabylon-A19/trunk/FoB_ArmorWithMo
 git_clone https://github.com/wtk34Mods/wtk34_water_filter
 
 
+# Eric Beaudoin's More Paint Textures
+svn_checkout "https://github.com/Laotseu/7dtdMods/trunk/MorePaintTextures"
+
+
 # Farm Jeep
 # Guard Pets
 # Working Chicken Coop
 #https://github.com/arramus/Pet-Animals-and-Guards-A19-2021Jan01
 
-# Deep Dark
+# Deep Dark (Alternative Darkness Modlet)
 # https://docs.google.com/uc?export=download&id=1_uZRxQG5AWzq_4gZ1zcL5Rx16PLPma7v
 # gdrive_download 1_uZRxQG5AWzq_4gZ1zcL5Rx16PLPma7v DeepDark.rar extract_file
 
@@ -233,3 +217,7 @@ git_clone https://github.com/wtk34Mods/wtk34_water_filter
 # https://docs.google.com/uc?export=download&id=1pgirg2xR24OUpQ-0IyP7qS7NFnHuEcmz
 # gdrive_download 1pgirg2xR24OUpQ-0IyP7qS7NFnHuEcmz MoreFrequenctInjuries.zip extract_file
 
+# Alucard's Blessed Metal Mod
+# https://drive.google.com/file/d/15PnRd08dDeVNLqcGlYs6mII0zGLDEMO_/view?usp=sharing
+
+# https://7daystodiemods.com/vanilla-plus/

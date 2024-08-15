@@ -16,6 +16,15 @@ This Modlet Collection should be considered Vanilla+.
 
 These modlets are selected for their Quality of Life (QoL) improvements over vanilla gameplay. There are no giants, rainbow zombies, flying insects, or substantial changes to gameplay. Anyone familiar with and who enjoys playing the vanilla game would be able to play this collection comfortably. _I'm confident after playing this collection, you'll find many or most of the modlets near-requirements for any future games of your own._
 
+## INSTALL
+
+The set of generate scripts was originally created and run from a Mac OS X system, but uses the GNU/Linux commands.
+
+brew install gnu-sed
+brew install php-cli
+brew install svn
+brew install p7zip
+
 ## Modlet Listing
 
 - DelStryker Delmod Modlets

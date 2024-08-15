@@ -1,19 +1,21 @@
 #!/bin/bash
-. ../../download_mods.func.sh
+#. ../../download_mods.func.sh
+. ../download_mods.func.sh
+#. download_mods.func.sh
 
 echo "###################################"
 echo "GENERATING COMBINED MODLET"
 
 # Create the CombinedModlet folder
-rm -rf CombinedModlet extracted_7DTD-Neopolitan; mkdir -p CombinedModlet/Config/XUi
+rm -rf CombinedModlet extracted_7DTD-Neopolitan; mkdir -p CombinedModlet/Config/XUi; mkdir -p CombinedModlet/Config/XUi_Common
 echo "<?xml version=\"1.0\" encoding=\"UTF-8\" ?>
 <xml>
 	<ModInfo>
 		<Name value=\"Neopolitan\" />
 		<Description value=\"7DTD Vanilla with some chocolate and strawberry modlets mixed in.\" />
 		<Author value=\"Combined by Shouden Kalferas, but Authored by Many (see README)\" />
-		<Version value=\"A19.3_1.0d\" />	
-		<Website value=\"None\" />		
+		<Version value=\"A19.3_1.0d\" />
+		<Website value=\"None\" />
 	</ModInfo>
 </xml>" > CombinedModlet/ModInfo.xml
 
@@ -23,7 +25,7 @@ cat ModsUnsorted.txt | sort > ModletList.txt; rm -rf ModsUnsorted.txt
 while read moddir; do
   ## If localization.txt exists, we should copy it to the combined file
   #echo $moddir;
-  
+
   # Extract Mod Info
   NAME=`grep Name "$moddir/ModInfo.xml" | grep -o '".*"' | tr -d '"'`
   AUTHOR=`grep Author "$moddir/ModInfo.xml" | grep -o '".*"' | tr -d '"'`
@@ -44,7 +46,8 @@ while read moddir; do
       echo "Key,File,Type,UsedInMainMenu,NoTranslate,english,Context / Alternate Text,german,latam,french,italian,japanese,koreana,polish,brazilian,russian,turkish,schinese,tchinese,spanish" > CombinedModlet/Config/Localization.txt
     fi
     echo "" >> CombinedModlet/Config/Localization.txt
-    ../parse-localization.php "$moddir/Config/Localization.txt" >> CombinedModlet/Config/Localization.txt
+		# Temporarily commented out.
+    #../parse-localization.php "$moddir/Config/Localization.txt" >> CombinedModlet/Config/Localization.txt
   fi
   # Handle Files named "localization.txt"
   #if [[ -f $moddir/Config/localization.txt ]]; then
@@ -54,18 +57,18 @@ while read moddir; do
   #  echo "" >> CombinedModlet/Config/Localization.txt
   #  cat "$moddir/Config/localization.txt" >> CombinedModlet/Config/Localization.txt
   #fi
-  
+
   ## Find all XML files under the Mod Folder
   find "$moddir/Config" -name *.xml ! -name ModInfo.xml > MODXMLs.txt
   while read xmlfile; do
     BASENAME=`echo "$xmlfile" | cut -d'/' -f3-`
-    cat "$xmlfile" | sed -e :a -re 's/<!--.*?-->//g;/<!--/N;//ba' > NOCOMMENTS_XMLFILE
+    cat "$xmlfile" | gsed -e :a -re 's/<!--.*?-->//g;/<!--/N;//ba' > NOCOMMENTS_XMLFILE
     cat NOCOMMENTS_XMLFILE | awk 'NF' > NOBLANK_XMLFILE; rm -rf NOCOMMENTS_XMLFILE
-    
+
     cat NOBLANK_XMLFILE | grep '\S' > XMLFILE
-    sed -i '1d' XMLFILE
-    sed -i '$ d' XMLFILE
-    
+    gsed -i '1d' XMLFILE
+    gsed -i '$ d' XMLFILE
+
     echo "$moddir/Config/$BASENAME"
 
     if [[ ! -f CombinedModlet/$BASENAME ]]; then
@@ -77,13 +80,13 @@ while read moddir; do
 		echo "<!-- Download URL: $DLURL -->" >> CombinedModlet/$BASENAME
     # INSERT JUST TO XMLFILE WITHOUT OPENING AND CLOSING XML TAGS
     cat XMLFILE | awk 'NF' > NOBLANK_XMLFILE ;
-    sed -i "/^ *$/d" NOBLANK_XMLFILE
-    cat NOBLANK_XMLFILE >> CombinedModlet/$BASENAME; rm -rf XMLFILE NOBLANK_XMLFILE;    
+    gsed -i "/^ *$/d" NOBLANK_XMLFILE
+    cat NOBLANK_XMLFILE >> CombinedModlet/$BASENAME; rm -rf XMLFILE NOBLANK_XMLFILE;
     echo "<!-- END $NAME by $AUTHOR -->" >> CombinedModlet/$BASENAME
     echo "" >> CombinedModlet/$BASENAME
     echo "" >> CombinedModlet/$BASENAME
   done < MODXMLs.txt; rm -rf MODXMLs.txt
-done < ModletList.txt; 
+done < ModletList.txt;
 
 # Create README.md
 cp ../HEADER.md CombinedModlet/README.md

@@ -13,19 +13,24 @@ mkdir -p $MODS_DIR/$MODSSUBDIR/build_modletcollection
 # Download and Generate Server Manager Pack
 echo "Changing Directory to: $MODS_DIR/$MODSSUBDIR/servermods"
 cd $MODS_DIR/$MODSSUBDIR/servermods
-../../generate_servermods.sh
+MODCOUNT=`../../generate_servermods.sh`
+
+#read -p "Press any key to resume ..."
+MODCOUNT=`cat ../../MODCOUNT.txt`
 
 # Download and Generate Modlet Collection Pack
 echo "Changing Directory to: $MODS_DIR/$MODSSUBDIR/build_modletcollection"
 cd ../build_modletcollection
-../../generate_modletcollection.sh
+../../generate_modletcollection.sh $MODCOUNT
 cd ..
+
+read -p "Press any key to resume ..."
 
 # Generate Zipfile for Sanity's Edge
 mkdir -p build_SanityEdgeModlets/Mods
 cp -r servermods/* build_SanityEdgeModlets/Mods/
 cp -r build_modletcollection/* build_SanityEdgeModlets/Mods/
-cp -r build_SanityEdgeModlets/Mods/*/7DaysToDieServer_Data build_SanityEdgeModlets/
+cp -r build_SanityEdgeModlets/Mods/7DaysToDieServer_Data build_SanityEdgeModlets/
 cd build_SanityEdgeModlets
 zip -r $(date +%Y-%d-%m_%H%M%S)-Modlet_Collection-SanitysEdge.zip Mods 7DaysToDieServer_Data 2> /dev/null
 cd .. && rm -rf servermods
